@@ -1,0 +1,418 @@
+body {
+  font-family: "IBM Plex Mono", serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background-color: #ffffff; /* Dark blue */
+  color: rgb(0, 0, 0);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between; /* Align logo and nav-wrapper with space between */
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.hamburger {
+  font-size: 28px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 15px;
+  right: 20px; /* Top-right corner */
+}
+
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Make the nav-wrapper take full width */
+  justify-content: flex-end; /* Align everything at the right */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide navigation links */
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #003366;
+    padding: 10px;
+    border-radius: 5px;
+    flex-direction: column; /* Stack links vertically */
+  }}
+
+.nav-links a {
+  color: rgb(0, 0, 0);
+  margin: 0 15px;
+  text-decoration: none;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a::before {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Place animation under the text */
+  left: 0;
+  width: 0%; /* Initial width for the animation */
+  height: 2px; /* Thickness of the underline */
+  background-color: #003366; /* Dark blue underline */
+  transition: width 0.3s ease-in-out; /* Smooth width expansion */
+}
+
+
+.nav-links a:hover {
+  color: #003366; /* Gold */
+}
+.nav-links a:hover::before {
+  width: 100%; /* Expand the underline */
+}
+
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #003366; /* Dark blue */
+}
+
+.placeholder-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px 0;
+}
+
+.carousel-item {
+  min-width: 500px; /* Increased width of each client card */
+  margin: 20px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  scroll-snap-align: start;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.carousel-item:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.carousel-item p {
+  font-size: 20px; /* Increased font size */
+  color: #003366; /* Dark blue text color */
+}
+
+/* Contact Section Styling */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-header {
+  margin-bottom: 30px;
+  max-width: 600px; /* Limits header width for better alignment */
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #003366; /* Dark blue */
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Form Container */
+.contact-form {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Ensure a consistent card size */
+  width: 100%;
+  box-sizing: border-box; /* Includes padding and borders in width calculation */
+  text-align: left;
+}
+
+/* Input Fields */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #003366; /* Dark blue */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%; /* Matches the width of the parent container */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  color: #333;
+  box-sizing: border-box; /* Avoids overflow issues with padding */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #003366; /* Highlight with theme color */
+}
+
+/* Submit Button */
+.submit-btn {
+  display: block;
+  width: 100%; /* Full width to align with input fields */
+  background-color: #003366; /* Dark blue */
+  color: white;
+  padding: 10px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #094f09; /* Gold */
+}
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu a {
+  display: block;
+  margin: 10px 0;
+  color: #003366; /* Dark blue */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #ffcc00; /* Gold */
+}
+
+.close {
+  background: #e74c3c; /* Red */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.close:hover {
+  background: #c0392b; /* Darker red */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-wrapper {
+    justify-content: space-between; /* Adjust items so that the hamburger can be placed on the right */
+  }
+
+  .nav-links {
+    display: none; /* Hide the regular nav links */
+    position: absolute;
+    top: 60px; /* Place under header */
+    right: 20px; 
+    background-color: #003366;
+    padding: 10px;
+    border-radius: 5px;
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger menu on small screens */
+  }
+
+  .overlay {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px; /* Smaller logo on smaller devices */
+  }
+
+  h1 {
+    font-size: 24px; /* Smaller heading font */
+  }
+}
+
+
+
+/* Footer Styling */
+footer {
+  background-color: #003366; /* Dark blue */
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ffcc00; /* Gold */
+}
+
+.footer-social {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  background-color: #555;
+  color: white;
+  padding: 10px 15px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+  background-color: #ffcc00; /* Gold */
+}
+
+/* Mobile Responsiveness for Footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icon {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin: 4px;
+  }
+}
+
+/* About Section Styling */
+#about {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Center text inside the section */
+  padding: 50px 20px;
+}
+
+#about h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #003366; /* Dark blue */
+}
+
+#about p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.placeholder-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
