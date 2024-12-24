@@ -115,7 +115,7 @@ h1 {
 }
 
 .carousel-item {
-  min-width: 500px; /* Increased width of each client card */
+  min-width: 350px; /* Increased width of each client card */
   margin: 20px;
   padding: 30px;
   background-color: #ffffff;
@@ -134,6 +134,36 @@ h1 {
 .carousel-item p {
   font-size: 20px; /* Increased font size */
   color: #003366; /* Dark blue text color */
+}
+
+
+/* Styling for Client Image */
+.client-image {
+  width: 100%; /* Ensures the image stretches to the full width */
+  max-width: 100px; /* Set max-width to control the image size */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50% ; /* Make the image circular */
+  margin-bottom: 20px; /* Spacing between image and text */
+  object-fit: cover;
+  border: 1px solid #003366;
+  
+}
+
+/* Client Title (Name) */
+.client-title {
+  font-size: 1.5rem;
+  color: #003366; /* Dark blue */
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Client Subtitle (Description) */
+.client-subtitle {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  max-width: 300px;
+  margin: 0 auto; /* Center subtitle text */
 }
 
 /* Contact Section Styling */
@@ -398,13 +428,13 @@ footer {
 }
 
 #about h1 {
-  font-size: 32px;
+  font-size: 70px;
   margin-bottom: 20px;
   color: #003366; /* Dark blue */
 }
 
 #about p {
-  font-size: 18px;
+  font-size: 45px;
   margin-bottom: 20px;
   color: #333;
 }
