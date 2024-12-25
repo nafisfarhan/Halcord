@@ -1,8 +1,14 @@
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+
+
 body {
   font-family: "IBM Plex Mono", serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   color: #333;
 }
 
@@ -173,7 +179,7 @@ h1 {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   color: #333;
   text-align: center;
   padding: 20px;
@@ -348,8 +354,8 @@ h1 {
 
 /* Footer Styling */
 footer {
-  background-color: #003366; /* Dark blue */
-  color: white;
+  background-color: #ffffff; /* Dark blue */
+  color: rgb(0, 0, 0);
   padding: 30px 20px;
   text-align: center;
 }
@@ -368,7 +374,7 @@ footer {
 }
 
 .footer-links a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   margin: 0 15px;
   font-size: 16px;
@@ -376,7 +382,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #ffcc00; /* Gold */
+  color: #003366; /* Gold */
 }
 
 .footer-social {
@@ -446,3 +452,68 @@ footer {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+
+
+
+
+/* General styling for the stats section */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #003366; /* Black background for contrast */
+  color: #fff; /* White text color */
+}
+
+.stat-item {
+  text-align: center;
+  flex: 1;
+  margin: 10px;
+}
+
+.stat-item h2 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.stat-item p {
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .stats-section {
+    flex-direction: column; /* Stack items vertically */
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .stat-item {
+    margin: 15px 0; /* Add margin between items */
+  }
+
+  .stat-item h2 {
+    font-size: 2.5rem; /* Reduce heading size */
+  }
+
+  .stat-item p {
+    font-size: 1rem; /* Reduce subtitle size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .stats-section {
+    padding: 10px 5px; /* Further reduce padding for very small screens */
+  }
+
+  .stat-item h2 {
+    font-size: 2rem; /* Further reduce heading size */
+  }
+
+  .stat-item p {
+    font-size: 0.9rem; /* Further reduce subtitle size */
+  }
+}
+
